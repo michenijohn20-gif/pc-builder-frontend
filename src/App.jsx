@@ -197,5 +197,73 @@ export default function App() {
     }
   };
 
+    return (
+    <div className="app-container">
+      {/* 1. Global Navigation */}
+      <Navbar 
+        view={view} 
+        setView={setView} 
+        token={token} 
+        username={username} 
+        onLogout={handleLogout} 
+      />
+
+      {/* 2. Global Status Notifications */}
+      <Toast feedback={feedback} />
+
+      {/* 3. Conditional Page Router */}
+      <main className="main-content">
+        {view === 'home' && (
+          <Home token={token} setView={setView} />
+        )}
+
+        {view === 'catalog' && (
+          <Catalog 
+            components={components} 
+            token={token} 
+            onAddComponent={handleAddComponent} 
+            selectedComponent={selectedComponent}
+            onViewSpecs={handleViewSpecs}
+          />
+        )}
+
+        {view === 'gpu' && <GPU />}
+
+        {view === 'ram' && <RAM />}
+
+        {view === 'builder' && (
+          <Builder 
+            token={token}
+            setView={setView}
+            builds={builds}
+            selectedBuild={selectedBuild}
+            setSelectedBuild={setSelectedBuild}
+            newBuildName={newBuildName}
+            setNewBuildName={setNewBuildName}
+            onCreateBuild={handleCreateBuild}
+            components={components}
+            onAddComponent={handleAddComponent}
+            onRemoveComponent={handleRemoveComponent}
+            onUpdateBuild={handleUpdateBuild}
+            onDeleteBuild={handleDeleteBuild}
+          />
+        )}
+
+        {view === 'auth' && (
+          <Auth 
+            isRegistering={isRegistering}
+            setIsRegistering={setIsRegistering}
+            authUsername={authUsername}
+            setAuthUsername={setAuthUsername}
+            authEmail={authEmail}
+            setAuthEmail={setAuthEmail}
+            authPassword={authPassword}
+            setAuthPassword={setAuthPassword}
+            onAuth={handleAuth}
+          />
+        )}
+      </main>
+    </div>
+  );
 
 }
