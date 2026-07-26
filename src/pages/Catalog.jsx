@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ImageBox from '../components/ImageBox';
 
 export default function Catalog({ components, token, onAddComponent, selectedComponent, onViewSpecs }) {
   const [activeCategory, setActiveCategory] = useState('ALL');
@@ -46,10 +47,7 @@ export default function Catalog({ components, token, onAddComponent, selectedCom
         <div className="grid-container">
           {filteredComponents.map(comp => (
             <div key={comp.id} className="component-card centered-style">
-              {/* Image Box Placeholder */}
-              <div className="image-box">
-                <span>IMAGE</span>
-              </div>
+              <ImageBox src={comp.image_url} alt={comp.name} />
 
               {/* Hardware Spec Info */}
               <div className="card-details">

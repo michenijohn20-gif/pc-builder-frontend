@@ -113,23 +113,31 @@ export default function Builder({
                 {selectedBuild.components.length === 0 ? (
                   <p className="empty-state">No parts added yet. Click 'Add' on the left panel catalog to start customizing!</p>
                 ) : (
-                  selectedBuild.components.map((c, index) => (
-                    <div key={index} className="receipt-row">
-                      <span>{c.name}</span>
-                      {/* Flex wrapper to host both price and the removal button */}
+                  selectedBuild.components.map((c) => {
+                    const quantity = c.quantity || 1;
+                    const unitPrice = Number(c.unit_price ?? c.price ?? 0);
+                    const linePrice = Number(c.line_price ?? unitPrice * quantity);
+
+                    return (
+                    <div key={c.id} className="receipt-row">
+                      <span>
+                        {c.name}
+                        {quantity > 1 && <small className="receipt-quantity">x{quantity}</small>}
+                      </span>
                       <div className="receipt-row-right">
-                        <strong>${c.price.toFixed(2)}</strong>
+                        <strong>${linePrice.toFixed(2)}</strong>
                         <button 
                           type="button"
                           className="btn-remove-item" 
                           onClick={() => onRemoveComponent(selectedBuild.id, c.id)}
-                          title="Remove component from build"
+                          title="Remove one from build"
                         >
                           &times;
                         </button>
                       </div>
                     </div>
-                  ))
+                    );
+                  })
                 )}
               </div>
               <div className="receipt-total">

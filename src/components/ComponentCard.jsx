@@ -1,15 +1,10 @@
 import React from 'react';
+import ImageBox from './ImageBox';
 
 export default function ComponentCard({ item, primaryFieldLabel, primaryFieldKey }) {
   return (
     <article className="component-card resource-card">
-      <div className="image-box resource-image">
-        {item.image_url ? (
-          <img src={item.image_url} alt={item.name} />
-        ) : (
-          <span>IMAGE</span>
-        )}
-      </div>
+      <ImageBox src={item.image_url} alt={item.name} />
       <div className="card-details">
         <h3 className="comp-title">{item.name}</h3>
         <p className="comp-subtitle">{item.brand}</p>
