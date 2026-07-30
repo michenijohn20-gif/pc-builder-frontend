@@ -13,11 +13,6 @@ export default function ComponentCard({ item, primaryFieldLabel, primaryFieldKey
         </p>
         <p className="comp-price-blue">${Number(item.price).toFixed(2)}</p>
       </div>
-      <div className="spec-chips">
-        {Object.entries(item.specs || {}).map(([key, value]) => (
-          <span key={key}>{key}: {String(value)}</span>
-        ))}
-      </div>
     </article>
   );
 }

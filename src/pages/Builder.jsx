@@ -147,7 +147,7 @@ export default function Builder({
             </div>
           ) : (
             <div className="empty-workspace">
-              <p>Create a build on the left panel to begin assembling components.</p>
+              <p>Create a build on the left panel to begin asembling components.</p>
             </div>
           )}
         </div>
