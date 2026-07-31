@@ -4,7 +4,7 @@ export default function Navbar({ view, setView, token, username, onLogout }) {
   return (
     <nav className="navbar">
       {/* Brand logo acts as a home shortcut */}
-      <div className="nav-logo" onClick={() => setView('home')}>DEMO</div>
+      <div className="nav-logo" onClick={() => setView('home')}>MyPC</div>
       
       <div className="nav-links">
         {/* Added explicit Home button */}
