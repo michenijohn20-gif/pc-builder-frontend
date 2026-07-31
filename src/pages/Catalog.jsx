@@ -56,7 +56,7 @@ export default function Catalog({ components, token, onAddComponent, selectedCom
                   {comp.socket ? `Socket: ${comp.socket}` : comp.brand} 
                   {comp.cores ? ` | ${comp.cores} Cores` : ''}
                 </p>
-                <p className="comp-price-blue">Price: ${comp.price.toFixed(2)}</p>
+                <p className="comp-price-blue">Est. Market Price: ${comp.price.toFixed(2)}</p>
               </div>
 
               {/* Action Triggers */}
