@@ -1,35 +1,17 @@
 # PC Builder Frontend
 
-React + Vite client for browsing parts, viewing specs, signing in, and managing saved PC builds.
+React and Vite client for exploring the component catalog, checking part details, signing in, and assembling PC builds in a simple browser-based interface.
 
-## Setup
+It is the main user-facing side of the project, with pages for the catalog, build flow, authentication, and part-specific views.
+
+## Installation
 
 1. `cd pc-builder-frontend`
 2. `npm install`
-3. `npm run dev`
 
-## Deployment
+## Run
 
-Set `VITE_API_URL` to your Railway backend API, for example:
+1. `cd pc-builder-frontend`
+2. `npm run dev`
 
-`https://your-railway-backend.up.railway.app/api`
-
-For Netlify:
-
-1. Set the publish directory to `dist`
-2. Use `npm run build` as the build command
-3. Add the `VITE_API_URL` environment variable in site settings
-
-For Vercel:
-
-1. Point the project root at `pc-builder-frontend`
-2. Use `npm run build` as the build command
-3. Set `VITE_API_URL` in the project environment variables
-
-## Features
-
-- Browse hardware by category
-- View component specs
-- Register and log in
-- Create, rename, and delete saved builds
-- Add and remove components from a build
+The app runs on `http://localhost:5173` by default.
