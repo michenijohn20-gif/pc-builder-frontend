@@ -10,8 +10,6 @@ export default function Navbar({ view, setView, token, username, onLogout }) {
         {/* Added explicit Home button */}
         <button className={view === 'home' ? 'active' : ''} onClick={() => setView('home')}>Home</button>
         <button className={view === 'catalog' ? 'active' : ''} onClick={() => setView('catalog')}>Catalog</button>
-        <button className={view === 'gpu' ? 'active' : ''} onClick={() => setView('gpu')}>GPU</button>
-        <button className={view === 'ram' ? 'active' : ''} onClick={() => setView('ram')}>RAM</button>
         <button className={view === 'builder' ? 'active' : ''} onClick={() => setView('builder')}>Builder</button>
         {token ? (
           <div className="user-menu">

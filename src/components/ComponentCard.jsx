@@ -8,6 +8,9 @@ export default function ComponentCard({ item, primaryFieldLabel, primaryFieldKey
       <div className="card-details">
         <h3 className="comp-title">{item.name}</h3>
         <p className="comp-subtitle">{item.brand}</p>
+        {item.socket && (
+          <p className="comp-subtitle">Socket: {item.socket}</p>
+        )}
         <p className="comp-subtitle">
           {primaryFieldLabel}: {item[primaryFieldKey] || 'N/A'}
         </p>

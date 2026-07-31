@@ -38,7 +38,7 @@ export default function Catalog({ components, token, onAddComponent, selectedCom
               <p className="spec-label">Selected Component</p>
               <h3>{selectedComponent.name}</h3>
               <p>{selectedComponent.brand} | {selectedComponent.category}</p>
-              <p>{selectedComponent.socket ? `Socket: ${selectedComponent.socket}` : 'No socket listed'}</p>
+              <p>{selectedComponent.socket || selectedComponent.specs?.type ? `Socket: ${selectedComponent.socket || selectedComponent.specs?.type}` : 'No socket listed'}</p>
               <p className="comp-price-blue">Price: ${selectedComponent.price.toFixed(2)}</p>
             </div>
           </section>
